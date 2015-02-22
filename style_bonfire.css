@@ -250,6 +250,10 @@ select#currency{
 	color: #4c4c4c;
 	padding: 3.5px 0px 0 11px;
 	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
 }
 select#currency::-ms-expand {
 display: none;
