@@ -200,7 +200,7 @@ nav{
 	background: #f54922;
 }
 
-#line-4{
+#welcome-line{
 	height: 60px;
 	background: linear-gradient(to top, #f9f6f2, #f8f5f1);
 	text-align: center;
@@ -394,11 +394,8 @@ display: none;
 	vertical-align: middle;
 }
 
-.purchase  a {
-	display: inline-block;
+.purchase  button {
 	font: 14px/14px telegrafico;
-	text-decoration: none;
-	text-align: center;
 	height: 50%;
 	background: linear-gradient(to top, #8cc7c5, #9fdcda);
 	width: 79px;
@@ -408,17 +405,12 @@ display: none;
 	color: white;
 	box-shadow: inset 0px 1px 1px 1px #beecea;
 }
-.purchase  a:hover{
+.purchase  button:hover{
+	cursor: pointer;
 	border-color: #e76e4c;
 	background: linear-gradient(to top, #e84621, #fd5f37);
 	box-shadow: inset 0px 1px 1px 1px #fe7f4c;
 	text-shadow: -1px -1px 1px  #9f4d2a;
-}
-.purchase a:before {     
-	content: "";
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
 }
 
 .featured{
