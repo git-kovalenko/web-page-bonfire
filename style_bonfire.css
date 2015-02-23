@@ -324,6 +324,7 @@ display: none;
 
 #slider{
 	overflow: hidden;
+	margin-bottom: 45px;
 }
 #slider > ul li:not(:nth-child(1)){
 	display: none;
@@ -341,7 +342,6 @@ display: none;
 	width: 100%;
 	background: linear-gradient(to right, #91d2d0, #9bd7d5);
 	border-bottom: 5px solid #91cdcb;
-	margin-bottom: 40px;
 }
 #slide_ruler ul{
 	height: 100%;
@@ -585,7 +585,6 @@ display: none;
 	display: flex;
 	justify-content: space-between;
 	width: 279px;
-	margin-bottom: 195px;
 }
 .page_buttons li{
 	width: 31px;
@@ -642,15 +641,13 @@ display: none;
 
 
 
-
-
 /* Footer
 -----------------------------------------------------------------------------*/
 .footer {
-	background: gray;
 	min-width: 600px;
 	max-width: 1480px;
 	margin: 0 auto;
+	margin-top: 195px;
 }
 
 .sub_footer{
