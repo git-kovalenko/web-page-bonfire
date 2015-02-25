@@ -494,8 +494,6 @@ display: none;
 }
 .price{
 	background: linear-gradient(to top, #cccccc, #e8e8e8);
-	display: inline-block;
-	line-height: 0;
 	float: right;
 	border: 1px solid #5b5b5b;
 	margin: 1px 7px 0 0;
@@ -506,13 +504,12 @@ display: none;
 	height: 26px;
 	width: 18px;
 	font: 16px/16px TerminalDosis-Book;
-	float: right;
 	text-align: center;
 	line-height: 1.5;
 	font-weight: 700;
-	border-left: 1px solid #5b5b5b;
+	border-right: 1px solid #5b5b5b;
 }
-.price li:last-child{
+.price li:first-child{
 	background: linear-gradient(to top, #454545, #636363);
 	border: 0;
 	color: white;
