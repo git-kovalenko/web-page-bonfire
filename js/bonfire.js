@@ -7,6 +7,25 @@ $(document).ready(function(){
 	},3000);
 	
 	
+	var brand_slider = $('.brands > ul');
+	var next_link = $('.brands > img:last-child');
+	var prev_link = $('.brands > img:first-child');
+	var is_animate = false;
+	var slide_width = $(brand_slider).children().first().outerWidth(true);
+	//var scroll_slider = brand_slider.position().left - slide_width;
+	var scroll_width = brand_slider.width() / 4;
+	
+	$(next_link).click( function(){
+		//alert(1);
+			
+		if(!brand_slider.is(':animated')) {
+			brand_slider.animate({left: scroll_width}, 500, function(){
+			$(brand_slider)
+			.find('li:first-child')
+			.appendTo(brand_slider);
+			});
+		}
+	});
 
 	
 })

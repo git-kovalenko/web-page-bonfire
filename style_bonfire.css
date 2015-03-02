@@ -531,13 +531,31 @@ display: none;
 	justify-content: space-between;
 	align-items: center;
 }
-.brands > ul{
+.brand_slider_wrapper{
+	width: calc(100% - 26px);
+	overflow: hidden;
+}
+.brand_slider_wrapper  > ul{
 	list-style: none;
-	width: 77%;
-	display: inline-flex;
-	justify-content: space-between;
+	display: flex;
 	
+	background-color: yellow;
+}
+.brand_slider_wrapper > ul li{
+	background-color: gray;
+	width: 200px;
+	display: inline-flex;
+	justify-content: center; 
 	align-items: center;
+	flex: none;	
+	
+}
+.brand_slider_wrapper > ul li img{
+	
+}
+.brand_slider_wrapper > ul li:nth-child(odd){
+	background-color: blue;
+
 }
 .brands > img{
 	height: 20px;
