@@ -1,42 +1,13 @@
-var slider = {
-	slides:['slide_1.jpg','slide_2.jpg','slide_3.jpg','slide_4.jpg','slide_5.jpg'],
-	frame:0, 
-	set: function(frame) { 
-		$("#slider > ul li:visible").hide();
-		$('#slider > ul li:eq('+frame+')').show();
-		
-	},
-	init: function() { 
-		var slider_list = document.querySelector("#slider > ul");
-		while (slider_list.firstChild){
-			slider_list.removeChild(slider_list.firstChild);			
-		}
-		for (var i = 0; i<5; i++){
-			$(slider_list).append('<li><img src="images/'+this.slides[i]+'" alt="Slide '+(i+1)+'"></li>');
-		}
-		this.set(this.frame);
-	},
-	left: function() { 
-		this.frame--;
-		if(this.frame < 0) this.frame = this.slides.length-1;
-		this.set(this.frame);
-	},
-	right: function() { 
-		this.frame++;
-		if(this.frame == this.slides.length) this.frame = 0;
-		this.set(this.frame);		
-	}
-};
-	
-
-
 $(document).ready(function(){
 	currency_init();
 	
 	slider.init();
 	setInterval(function() { 
 		slider.right();
-	},1000);
+	},3000);
+	
+	
+
 	
 })
 
@@ -72,5 +43,45 @@ function currency_change(){
 		});
 	}
 }
+
+var slider = {
+	slides:['slide_1.jpg','slide_2.jpg','slide_3.jpg','slide_4.jpg','slide_5.jpg'],
+	frame:0, 
+	set: function(frame) { 
+		$("#slider > ul li:visible").hide();
+		$('#slider > ul li:eq('+frame+')').show();
+		var ruler = $('#slide_ruler > ul li');
+		for (var i = 0; i < 5; i++){
+			ruler[i].style.backgroundColor = '';
+		}
+		ruler[frame].style.backgroundColor = 'white';
+	},
+	init: function() { 
+		var slider_list = document.querySelector("#slider > ul");
+		while (slider_list.firstChild){
+			slider_list.removeChild(slider_list.firstChild);			
+		}
+		for (var i = 0; i<5; i++){
+			$(slider_list).append('<li><img src="images/'+this.slides[i]+'" alt="Slide '+(i+1)+'"></li>');
+		}
+		this.set(this.frame);
+		$('#slide_ruler > ul').click( function(e){ 
+			var target = e.target;
+			slider.set($(target).index());
+			slider.frame = $(target).index();
+		});
+	},
+	left: function() { 
+		this.frame--;
+		if(this.frame < 0) this.frame = this.slides.length-1;
+		this.set(this.frame);
+	},
+	right: function() { 
+		this.frame++;
+		if(this.frame == this.slides.length) this.frame = 0;
+		this.set(this.frame);		
+	}
+};
+
 
 
