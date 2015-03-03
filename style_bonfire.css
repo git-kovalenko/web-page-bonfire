@@ -528,32 +528,30 @@ display: none;
 .brands{
 	height: 148px;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 }
 .brand_slider_wrapper{
 	width: calc(100% - 26px);
 	overflow: hidden;
-}
-.brand_slider_wrapper  > ul{
-	list-style: none;
 	display: flex;
-	
 	background-color: yellow;
+	
 }
-.brand_slider_wrapper > ul li{
-	background-color: gray;
-	width: 200px;
+
+.brand_logo{
+
+	width: 25%;
 	display: inline-flex;
 	justify-content: center; 
 	align-items: center;
 	flex: none;	
-	
+	background-color: skyblue;
+
 }
-.brand_slider_wrapper > ul li img{
-	
+.brand_logo:nth-child(1){
+	/*margin-left: -25%;*/
 }
-.brand_slider_wrapper > ul li:nth-child(odd){
+.brand_logo:nth-child(odd){
 	background-color: blue;
 
 }
