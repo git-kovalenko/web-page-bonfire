@@ -534,26 +534,14 @@ display: none;
 	width: calc(100% - 26px);
 	overflow: hidden;
 	display: flex;
-	background-color: yellow;
-	
 }
 
 .brand_logo{
-
 	width: 25%;
 	display: inline-flex;
 	justify-content: center; 
 	align-items: center;
 	flex: none;	
-	background-color: skyblue;
-
-}
-.brand_logo:nth-child(1){
-	/*margin-left: -25%;*/
-}
-.brand_logo:nth-child(odd){
-	background-color: blue;
-
 }
 .brands > img{
 	height: 20px;

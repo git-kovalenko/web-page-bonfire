@@ -6,24 +6,8 @@ $(document).ready(function(){
 		slider.right();
 	},3000);
 	
+	brand_slider_init();
 	
-	var brand_slider = $('.brand_logo:nth-child(1)');
-	var next_link = $('.brands > img:last-child');
-	var prev_link = $('.brands > img:first-child');
-	var is_animate = false;
-	var scroll_width = '25%';
-	
-	$(next_link).click( function(){
-		alert(1);
-			
-		if(!brand_slider.is(':animated')) {
-			brand_slider.animate({margin-left: "25%"}, 500, function(){
-			$(brand_slider)
-			.find('li:first-child')
-			.appendTo(brand_slider);
-			});
-		}
-	});
 
 	
 })
@@ -100,5 +84,32 @@ var slider = {
 	}
 };
 
-
+function brand_slider_init(){
+	var brand_slider = $('.brand_logo:first-child');
+	var next_link = $('.brands > img:last-child');
+	var prev_link = $('.brands > img:first-child');
+	var is_animate = false;
+	var scroll_width = '25%';
+	var animation_time = 400;
+	
+	$(next_link).click( function(){
+		if(!brand_slider.is(':animated')) {
+			$('.brand_logo:last-child').insertBefore(brand_slider);
+			brand_slider = $('.brand_logo:first-child');
+			$(brand_slider).css({margin: '0 0 0 -'+scroll_width});
+			brand_slider.animate({margin: '0'}, animation_time);
+		}
+	});
+	$(prev_link).click( function(){
+		if(!brand_slider.is(':animated')) {
+			brand_slider.animate({margin: '0 0 0 -'+scroll_width}, animation_time, function(){
+				var first_slide = $('.brand_logo:first-child');
+				$(first_slide).remove();
+				$(first_slide).css({margin: '0'});
+				$(first_slide).insertAfter('.brand_logo:last-child');
+				brand_slider = $('.brand_logo:first-child');
+			});
+		}
+	});
+}
 
